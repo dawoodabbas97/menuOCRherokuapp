@@ -1,0 +1,177 @@
+<!doctype html>
+<title>MenuOCR</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+/*body {
+background-repeat: no-repeat;
+	background-image: url("https://s2.postimg.org/yzkkpvzmx/download.jpg")
+
+}*/
+body{
+  background: rgba(0,0,0,0.9);
+}
+form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  width: 500px;
+  height: 200px;
+  border: 4px dashed #fff;
+}
+form p{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 170px;
+  color: #ffffff;
+  font-family: Arial;
+}
+form input{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+}
+form button{
+  margin: 0;
+  color: #fff;
+  background: #16a085;
+  border: none;
+  width: 508px;
+  height: 35px;
+  margin-top: -20px;
+  margin-left: -4px;
+  border-radius: 4px;
+  border-bottom: 4px solid #117A60;
+  transition: all .2s ease;
+  outline: none;
+}
+form button:hover{
+  background: #149174;
+	color: #0C5645;
+}
+form button:active{
+  border:0;
+}
+
+
+h1 {
+	margin-left: 25%;
+	position: absolute;
+    color:white ;
+    font-size: 60px;
+    
+}
+
+p {
+    font-family: verdana;
+    font-size: 25px;
+}
+.centered {
+	display: inline-table;
+	vertical-align: top;
+	 position: fixed;
+  top: 50%;
+  left:55%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+.btn-success{
+	background-color:  #CD853F;
+	border-color:#8B4513;
+	border-radius: 15px;
+}
+.btn-success:hover, .btn-success:active, .btn-success:focus {
+  background-color:  #CD853F;
+	border-color:#8B4513;
+	border-radius: 15px;
+}
+
+#file{
+    height: 0;
+    width: 0;
+}
+
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}  
+.
+</style>
+
+
+<!-- 
+</script> -->
+<body>
+
+<h1>Restaurant Menu OCR</h1>
+<div class="centered">
+<form  action="{{ landing_page }}" method="post" enctype="multipart/form-data">
+	
+	<!-- <div class="buttons">
+ --><!-- label class="btn btn-success">
+    Choose File <input type="file"  name="file" id="file" style="display: none;">
+</label>
+	</p>
+	<p><span style="padding-left: 15px"></span><input class="btn btn-success " type="submit" value="Submit"   /></p> -->
+
+ <input type="file" name="file" >
+  <p>Drag your files here or click in this area.</p>
+  <button type="submit">Upload</button>
+<!-- </div>  -->
+</form>
+<input type="hidden" id="myInput" value="Selected">
+</div>
+
+
+<!-- <script src="{{url_for('static', filename='js/m.js')}}"></script>
+ -->
+<script type="text/javascript">
+	/*$('input[name="file"]').change(function(){
+
+		var x = document.getElementById("myInput").value;
+		x.color=white;
+		x.type='x';
+alert(x);
+		 window.onload = function(){
+     
+   
+    document.getElementById("form p").innerHTML = x;
+
+}
+
+});*/
+$(document).ready(function(){
+  $('form input').change(function () {
+    $('form p').text(this.files.length + " file(s) selected");
+  });
+});
+</script>
+
+</body>
